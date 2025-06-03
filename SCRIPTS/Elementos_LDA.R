@@ -30,7 +30,7 @@ print(tdm)  # Mostrar la matriz resultante
 # Guardado de la información necesaria
 # ------------------------------------------------------
 
-# Guardar la TDM transpuesta como CSV para usar en modelos LDA externos
+# Guardar la TDM transpuesta como CSV para usarla en el modelo LDA
 write.csv(
   as.data.frame(t(as.matrix(tdm))),
   " .csv",
@@ -62,7 +62,7 @@ write.csv(
 )
 
 # ------------------------------------------------------
-# Mapeo deE user_id a formato númerico y secuencial
+# Mapeo de user_id a formato númerico y secuencial
 # (Requerido para el modelo LDA)
 # ------------------------------------------------------
 
