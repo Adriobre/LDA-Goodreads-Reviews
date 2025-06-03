@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """
 Este script implementa un modelo LDA que incorpora sentimientos por documento y
 usuarios. Usa Gibbs Sampling colapsado para la inferencia de tópicos y distribuciones.
@@ -16,7 +15,7 @@ import math
 
 class sentiment_stLDA:
     """
-    Modelo de Sentiment-Topic LDA.
+    Modelo de LDA.
     Args:
         nT (int): número de tópicos
         rate (array): calificaciones (sentimientos) por documento
