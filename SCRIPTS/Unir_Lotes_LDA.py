@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """
 Script para cargar, fusionar y guardar resultados parciales de un modelo LDA
 almacenados en archivos JSON. 
