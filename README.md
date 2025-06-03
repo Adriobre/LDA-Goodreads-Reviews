@@ -3,7 +3,7 @@ Trabajo de Fin de Grado, uso de modelos LDA, y aplicación a reseñas de Goodrea
 
 Este repositorio contiene el código y documentación desarrollados como parte del Trabajo de Fin de Grado (TFG), titulado **"Aplicación de modelos LDA a la identificación de tópicos en Reseñas"**.
 
-El objetivo principal de este trabajo es aplicar técnicas de caracterización de tópicos, concretamente el modelo LDA (*Latent Dirichlet Allocation*), para descubrir tópicos latentes en las reseñas de libros escritas por usuarios de la plataforma Goodreads. Posteriormente, se analizan estos tópicos según distintos géneros y valoraciones, se evalúa la convergencia del modelo y se exploran relaciones entre los tópicos mediante divergencia KL y visualizaciones.
+El objetivo principal es aplicar técnicas de modelado de tópicos, concretamente el modelo LDA (*Latent Dirichlet Allocation*), para descubrir tópicos latentes en reseñas de libros extraídas de la plataforma Goodreads. Se analiza la distribución de tópicos según géneros y valoraciones, se evalúa la convergencia del modelo y se exploran relaciones entre tópicos mediante divergencia KL y visualizaciones.
 
 ---
 
