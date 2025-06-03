@@ -105,7 +105,7 @@ tdm <- TermDocumentMatrix(corpus, control=list(wordLengths=c(1,Inf)))
 # Guardado del resultado final
 write.csv2(review_nueva2, " .csv")
 
-# Guarda estadísticas
+# Guardado de estadísticas
 write.csv(freq_corpus, " .csv")
 write.csv(freq_review, " .csv")
 write.csv(freq_filter, " .csv")
