@@ -55,7 +55,7 @@ Citas:
 ### 3. **Preparación para el Modelo LDA**
 
 - `Elementos_LDA.R`:  
-  Estructura los documentos y genera los objetos necesarios para alimentar el modelo LDA.
+  Estructura los documentos y genera los elementos necesarios para la realización del modelo LDA.
 
 ### 4. **Modelado LDA**
 
@@ -74,15 +74,21 @@ Citas:
   Analiza cómo se distribuyen los tópicos en función de la puntuación dada por los usuarios.
 
 - `Convergencia.py`:  
-  Mide la convergencia del modelo durante la iteración.
+  Mide la convergencia de la proporción de los distintos tópicos en las reseñas según la puntuación asignada.
 
 - `Divergencia_KL.py`:  
-  Calcula la divergencia de Kullback-Leibler entre tópicos para detectar tópicos transversales.
+  Calcula la divergencia de Kullback-Leibler entre tópicos para detectar tópicos transversales, así mismo, realiza un cambio de escala para una mayor visualización.
 
 - `Nube_Palabras.py`:  
-  Generación de nubes de palabras representativas por tópico.
+  Generación de nubes de palabras representativas por tópico y sentimiento.
 
 ---
+
+## 📁 Estructura de Carpetas
+
+Todos los scripts de procesamiento, modelado y análisis se encuentran organizados en la carpeta [`scripts/`](./scripts).  
+Allí podrás encontrar los archivos `.py` y `.R` utilizados en cada una de las fases descritas anteriormente.
+
 
 ## 🔧 Requisitos
 
