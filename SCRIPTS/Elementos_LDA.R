@@ -15,7 +15,7 @@ act_path <- dirname(rstudioapi::getActiveDocumentContext()$path)
 review_nueva <- read.csv(file.choose())
 
 # ------------------------------------------------------
-# CRreación de la matriz de términos
+# Creación de la matriz de términos
 # ------------------------------------------------------
 
 # Crear un corpus con los textos
