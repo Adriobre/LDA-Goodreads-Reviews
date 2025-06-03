@@ -7,7 +7,7 @@ El objetivo principal es aplicar técnicas de modelado de tópicos, concretament
 
 ---
 
-## 📦 Dataset
+## Dataset
 
 Las reseñas utilizadas provienen de una fuentes pública:
 
@@ -28,9 +28,9 @@ Citas:
 
 ---
 
-## 🧠 Estructura del Proyecto y Orden de Ejecución
+## Estructura y orden de ejecución
 
-### 1. **Filtrado Inicial y Selección de Datos**
+### 1. **Filtrado inicial y selección de datos**
 
 - `reduce_only_english_no_cero.py`:  
   Elimina reseñas que no están en inglés o con puntuación 0.
@@ -41,7 +41,7 @@ Citas:
 - `Only_{}_review.py`:  
   Filtra las reseñas para trabajar con un único género específico (p.ej. solo "fantasía").
 
-### 2. **Preprocesado de Texto**
+### 2. **Preprocesado de texto**
 
 - `Preprocesado.py`:  
   Limpieza del texto (URLs, stopwords, saltos de línea...) usando `nltk`, `gensim` y `spacy`.
@@ -52,12 +52,12 @@ Citas:
 - `filtrado_puntuaciones_y_minimo_reseñas.R`:  
   Filtra usuarios que no han usado todas las puntuaciones o que tienen muy pocas reseñas.
 
-### 3. **Preparación para el Modelo LDA**
+### 3. **Preparación para el modelo LDA**
 
 - `Elementos_LDA.R`:  
   Estructura los documentos y genera los elementos necesarios para la realización del modelo LDA.
 
-### 4. **Modelado LDA**
+### 4. **Modelo LDA**
 
 - `LDA_Lotes.py`:  
   Aplicación del modelo LDA por lotes para grandes volúmenes de datos.
@@ -68,7 +68,7 @@ Citas:
 - `LDA.py`:  
   Versión alternativa del modelo LDA completo sobre el conjunto procesado.
 
-### 5. **Análisis y Visualización de Resultados**
+### 5. **Análisis y visualización de resultados**
 
 - `Distribución_tópicos_puntuación.py`:  
   Analiza cómo se distribuyen los tópicos en función de la puntuación dada por los usuarios.
@@ -84,13 +84,13 @@ Citas:
 
 ---
 
-## 📁 Estructura de Carpetas
+## Estructura de carpetas
 
 Todos los scripts de procesamiento, modelado y análisis se encuentran organizados en la carpeta [`scripts/`](./scripts).  
 Allí podrás encontrar los archivos `.py` y `.R` utilizados en cada una de las fases descritas anteriormente.
 
 
-## 🔧 Requisitos
+## Requisitos
 
 ### Python (>= 3.8)
 
