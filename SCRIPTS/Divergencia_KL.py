@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """
 Este script calcula y analiza la divergencia KL (Kullback-Leibler) entre las 
 distribuciones de palabras para cada combinación de sentimiento y tópico 
