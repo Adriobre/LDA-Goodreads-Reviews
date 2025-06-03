@@ -49,7 +49,7 @@ def calcular_proporcion_por_sentimiento(moda_ta):
 
 def graficar_proporcion_por_sentimiento(proporcion_st):
     '''
-    Distribuye los subplots como: 2 arriba, 1 en medio, 2 abajo (ideal para 5 sentimientos).
+    Distribuye los subplots como: 2 arriba, 1 en medio, 2 abajo.
     '''
     fig = plt.figure(figsize=(16, 12))
     gs = gridspec.GridSpec(3, 2, height_ratios=[1, 1, 1])
