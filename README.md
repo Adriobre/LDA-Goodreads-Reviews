@@ -114,6 +114,6 @@ Instala los siguientes paquetes ejecutando este código en una consola de R:
 install.packages(c("tidyverse", "tm", "progress", "rstudioapi", "stopwords", "dplyr"))
 ```
 
-----------------Contacto---------------------
+## Contacto
 
 Para cualquier pregunta, sugerencia o problema relacionado con el uso de este repositorio, por favor contacta con [adriobre9@gmail.com].
