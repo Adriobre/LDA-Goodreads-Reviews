@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """
 Implementación de un modelo de caracterización de tópicos LDA por lotes,
  usando Gibbs Sampling.
