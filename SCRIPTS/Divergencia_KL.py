@@ -19,7 +19,7 @@ with open(" .json", "r") as f:
 results_stw = np.array(results['stw'])  # Convertir a array de NumPy 
 nS, nT, nW, _ = results_stw.shape  
 
-# Se extraen las palabras
+# Extraer las palabras
 matrix_words_df = pd.read_csv(" .csv")
 words = matrix_words_df.columns.tolist()
 
@@ -41,7 +41,7 @@ def check_normalization(distributions):
     if np.allclose(sums, 1, atol=1e-6): 
         print(" Todas las distribuciones están correctamente normalizadas.")
     else:
-        print("Hay distribuciones que NO están normalizadas.")
+        print("Hay distribuciones que no están normalizadas.")
         print("Ejemplo de sumas por sentimiento y tópico:\n", sums[:3, :3]) 
         print("Máxima desviación detectada:", np.max(np.abs(sums - 1))) 
 
