@@ -28,6 +28,16 @@ Citas:
 
 ---
 
+## Datos Filtrados por Género
+
+Para facilitar el análisis, se incluyen subconjuntos filtrados del dataset original, correspondientes a géneros específicos. Estos subconjuntos se han obtenido tras realizar todos los códigos hasta Solo_{}_review.py.
+
+- `reviews_fantasia.csv`: Reseñas de libros categorizados en "fantasy, paranormal" en formato CSV.
+- `reviews_comics.csv`: Reseñas correspondientes a "comics, graphic".
+
+
+---
+
 ## Estructura y orden de ejecución
 
 ### 1. **Filtrado inicial y selección de datos**
