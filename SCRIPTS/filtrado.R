@@ -10,14 +10,14 @@ library(progress)
 library(rstudioapi)
 library(stopwords) 
 
-# Obteneción de la ruta del archivo activo
+# Obtener la ruta del archivo activo
 act_path <- dirname(rstudioapi::getActiveDocumentContext()$path)
 
 # Obtención del archivo (.csv)
 # Con estructura: id, user_id, book_id, rate, date_added, text
 review_nueva <- read.csv(file.choose())
 
-# Tokenización del texto
+# Tokenizar el texto
 tokenize <- function(text){
   new_text <- str_split(text, " ")[[1]]
   return(new_text)
@@ -43,7 +43,7 @@ review_nueva <- review_nueva %>%
 # Expandir tokens y eliminar columna original de texto
 review_nueva <- review_nueva %>% select(-text) %>% unnest(cols=c(token))
 
-## Obteneción de stopwords en inglés
+## Obtener stopwords en inglés
 stopw <- stopwords("en", source = "stopwords-iso")
 # Normalizar caracteres
 stopw <- unique(chartr("áéíóúàèìòùü", "aeiouaeiouu", stopw))  
@@ -51,7 +51,7 @@ stopw <- unique(chartr("áéíóúàèìòùü", "aeiouaeiouu", stopw))
 ## Frecuencia de los tokens por review
 freq_review <- review_nueva %>% group_by(id, token) %>% summarize(freq = n())
 
-# Calculo de la frecuencia global de los tokens en el corpus
+# Calcular la frecuencia global de los tokens en el corpus
 nreview <- length(unique(review_nueva$id))
 freq_corpus <- freq_review %>% select(id, token) %>% group_by(token) %>% summarise(freq=n())
 freq_corpus <- freq_corpus %>% mutate(prop = freq/nreview)
@@ -73,7 +73,7 @@ nombres <- c("adam", "alex", "anna", "anne", "ben", "charlie", "daniel", "david"
 # Revisar palabras formadas por menos de 3 letras y con una frecuencia no muy baja
 freq_corpus$token[str_length(freq_corpus$token) < 3 & freq_corpus$prop >= 0.005] # Cambiar 0.005 por el umbral deseado
 
-# Eliminación de palabras poco frecuentes y con pocas letras
+# Eliminar palabras poco frecuentes y con pocas letras
 freq_filter <- freq_corpus %>% filter(prop >=  0.005 )
 # Filtrado adicional por longitud mínima y palabras irrelevantes (excepto "tv", cambiarlo por las palabras deseadas)
 freq_filter <- freq_filter %>% filter(!(str_length(token) < 3 & prop >= 0.005 & !(token %in% c("tv")))) 
@@ -98,14 +98,14 @@ review_nueva2 <- review_nueva2 %>% group_by(id, user_id,book_id, rate,date_added
 # Reordenar columnas
 review_nueva2 <- review_nueva2[,c("id", 'user_id', 'book_id', 'rate', 'date_added', 'text')]
 
-# Creación de una matríz de terminos para un análisis posterior
+# Crear matríz de terminos para un análisis posterior
 corpus <- Corpus(VectorSource(review_nueva2$text))
 tdm <- TermDocumentMatrix(corpus, control=list(wordLengths=c(1,Inf)))
 
-# Guardado del resultado final
+# Guardar el resultado final
 write.csv2(review_nueva2, " .csv")
 
-# Guardado de estadísticas
+# Guardar estadísticas
 write.csv(freq_corpus, " .csv")
 write.csv(freq_review, " .csv")
 write.csv(freq_filter, " .csv")
