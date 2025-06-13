@@ -11,7 +11,6 @@ import numpy as np
 from scipy.stats import mode
 import matplotlib.gridspec as gridspec
 
-# Estilo general
 sns.set(style="whitegrid")
 
 # Cargar resultados
@@ -36,7 +35,7 @@ def analizar_ta_en_grid(mode_ta, sa_true):
     
     fig = plt.figure(figsize=(16, 12))
     gs = gridspec.GridSpec(3, 2, height_ratios=[1, 1, 1])
-    posiciones = [(0, 0), (0, 1), (1, 0), (2, 0), (2, 1)]  # Máx 5 sentimientos
+    posiciones = [(0, 0), (0, 1), (1, 0), (2, 1), (2, 0)]  # Máx 5 sentimientos
 
     for idx, s in enumerate(unique_sentiments):
         ta_s = mode_ta[sa_true == s]
