@@ -24,7 +24,7 @@ unique_sentiments = np.unique(rate)
 sentiment_mapping = {val: idx for idx, val in enumerate(unique_sentiments)}
 results_true = np.array([sentiment_mapping[val] for val in rate])  
 
-# Se calcula la moda
+# Calcular la moda
 def calcular_moda_ta(results_ta):
     nD, nIter = results_ta.shape
     moda_ta = np.zeros((nD, nIter), dtype=int)
@@ -36,7 +36,7 @@ def calcular_moda_ta(results_ta):
             moda_ta[d, i] = np.argmax(conteo)  
     return moda_ta
 
-#Se calcula la proporción
+#Calcular la proporción
 def calcular_proporcion_por_sentimiento(moda_ta):
     proporcion_st = np.zeros((nS, nT, nIter))
     for s in range(nS):
@@ -49,12 +49,12 @@ def calcular_proporcion_por_sentimiento(moda_ta):
 
 def graficar_proporcion_por_sentimiento(proporcion_st):
     '''
-    Distribuye los subplots como: 2 arriba, 1 en medio, 2 abajo.
+    Distribuye los subplots como: 2 arriba, 2 en medio y 1 abajo.
     '''
     fig = plt.figure(figsize=(16, 12))
     gs = gridspec.GridSpec(3, 2, height_ratios=[1, 1, 1])
 
-    posiciones = [(0, 0), (0, 1), (1, 0), (2, 0), (2, 1)]
+    posiciones = [(0, 0), (0, 1), (1, 0), (1, 1), (2, 0)]
     for s in range(nS):
         row, col = posiciones[s]
         ax = plt.subplot(gs[row, col])
