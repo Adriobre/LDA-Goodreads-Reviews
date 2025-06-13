@@ -40,11 +40,6 @@ def preprocess_text(text):
     ----------
     text : str
         Reseña de texto que será procesada.
-
-    Returns
-    -------
-    str
-        Texto limpio y preprocesado.
     '''
     #Elimina URLs
     text = re.sub(r'https?://\S+|www\.\S+', '', text)
@@ -79,12 +74,6 @@ def tokenize(text):
     ----------
     text : str
         Reseña procesada que será tokenizada.
-
-    Returns
-    -------
-    list
-        Lista de tokens (palabras) filtradas sin stopwords.
-
     '''
     tokens = gensim.utils.simple_preprocess(text, deacc=True)
     tokens = [token for token in tokens if token not in stop_words]
@@ -99,11 +88,6 @@ def lemmatize(tokens):
     ----------
     tokens : list
         Lista de tokens (palabras) que serán lematizadas.
-
-    Returns
-    -------
-    list
-        Lista de lemas correspondientes a los tokens.
     '''
     doc = nlp(" ".join(tokens))
     return [token.lemma_ for token in doc]
