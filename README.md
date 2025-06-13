@@ -36,7 +36,7 @@ Citas:
   Elimina reseñas que no están en inglés o con puntuación 0.
 
 - `Genero_reviews.py`:  
-  Detecta el género de cada reseña.
+  Calcula estadísticas por género.
 
 - `Solo_{}_review.py`:  
   Filtra las reseñas para trabajar con un único género específico (p.ej. solo "fantasía").
