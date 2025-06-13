@@ -32,13 +32,13 @@ Citas:
 
 ### 1. **Filtrado inicial y selección de datos**
 
-- `reduce_only_english_no_cero.py`:  
+- `Solo_ingles.py`:  
   Elimina reseñas que no están en inglés o con puntuación 0.
 
-- `genero_reviews.py`:  
+- `Genero_reviews.py`:  
   Detecta el género de cada reseña.
 
-- `Only_{}_review.py`:  
+- `Solo_{}_review.py`:  
   Filtra las reseñas para trabajar con un único género específico (p.ej. solo "fantasía").
 
 ### 2. **Preprocesado de texto**
