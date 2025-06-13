@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
 """
-Created on Mon Feb 24 17:25:03 2025
-
-@author: mfreschi
+Este script identifica todos los libros clasificados como "comics, graphic" 
+a partir de un archivo de géneros, filtra las reseñas 
+y las guarda en formato CSV.
 """
 
 import csv
 import ast
 
-# Primero, leemos b.json y extraemos los book_id que pertenecen a la categoría 'comics, graphic'
+# Leer b.json y extraer los book_id que pertenecen a la categoría 'comics, graphic'
 comics_book_ids = set()
 with open('./data_final/goodreads_book_genres_initial.json', 'r', encoding='utf-8') as f:
     for line in f:
@@ -19,7 +19,7 @@ with open('./data_final/goodreads_book_genres_initial.json', 'r', encoding='utf-
             if 'comics, graphic' in registro.get('genres', {}):
                 comics_book_ids.add(registro['book_id'])
 
-# Ahora leemos a.json y filtramos las reviews cuyo book_id esté en el conjunto anterior
+# Leer a.json y filtrar las reviews cuyo book_id esté en el conjunto anterior
 reviews_filtradas = []
 with open('./data_final/reviews_english_no_cero.json', 'r', encoding='utf-8') as f:
     for line in f:
@@ -28,9 +28,10 @@ with open('./data_final/reviews_english_no_cero.json', 'r', encoding='utf-8') as
             if review.get('book_id') in comics_book_ids:
                 reviews_filtradas.append(review)
 
-# Escribimos las reviews filtradas en un CSV
-with open('./data_final/reviews_comics.csv', 'w', encoding='utf-8', newline='') as csvfile:
-    # Definimos los campos que queremos incluir (ajusta según lo que necesites)
+# Guardar las reviews filtradas en un CSV
+with open('.csv', 'w', encoding='utf-8', newline='') as csvfile:
+    
+    # Definir los campos que queremos incluir (ajusta según se necesite)
     fieldnames = ['user_id', 'book_id', 'rating', 'review_text', 'date_added']
     writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
     writer.writeheader()
