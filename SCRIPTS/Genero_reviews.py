@@ -1,15 +1,18 @@
 # -*- coding: utf-8 -*-
 """
-Created on Sat Feb 15 16:08:29 2025
-
-@author: mfreschi
+Este script toma las reseñas en inglés y las cruza con la información 
+de géneros por libro. Calcula estadísticas por género, incluyendo:
+- Total de reseñas
+- Número de usuarios distintos
+- Usuarios más activos por género
+- Cantidad de usuarios con más de 1000 reseñas en un solo género
 """
 
 import json
 from collections import defaultdict, Counter
 
-reviews = './data_final/reviews_english_no_cero.json'
-generos = './data_final/goodreads_book_genres_initial.json' 
+reviews = '.json'
+generos = '.json' 
 
 # Cargar los datos de los archivos JSON
 with open(reviews, 'r', encoding='utf-8') as f:
@@ -53,7 +56,7 @@ for genre, count in genre_review_count.items():
     })
 
 # Guardar en un archivo JSON
-output_file = './data_final/genre_review_summary.json'
+output_file = '.json'
 with open(output_file, 'w', encoding='utf-8') as f:
     json.dump(results, f, indent=4)
 
