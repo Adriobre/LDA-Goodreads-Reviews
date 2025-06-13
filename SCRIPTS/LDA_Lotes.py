@@ -75,11 +75,6 @@ class SentimentSTLDA:
         Parameters:
         ----------
         ta : Asignación actualizada de tópicos a documentos.
-
-        Returns
-        -------
-        ust : Matriz actualizada de conteos usuario-sentimiento-tópico.
-        stw : Matriz actualizada de conteos sentimiento-tópico-palabra.
         '''
         
         ust = np.zeros([self.nU, self.nS, self.nT])
@@ -106,12 +101,6 @@ class SentimentSTLDA:
         stw : Matriz de conteo sentimiento-tópico-palabra.
         alpha : Hiperparámetro para la distribución Dirichlet.
         eta : Hiperparámetro para la distribución Dirichlet.
-
-        Returns
-        -------
-        ta : Nueva asignación de tópicos.
-        ust : Matriz actualizada.
-        stw : Matriz actualizada.
         '''
         for d in range(self.nD):
             # Obtener estado actual del documento d
@@ -155,10 +144,6 @@ class SentimentSTLDA:
         nlot : Tamaño de cada lote de iteraciones.
         alpha : Parámetro Dirichlet para tópicos.
         eta : Parámetro Dirichlet para palabras.
-
-        Returns
-        -------
-        None.
         '''
         if use_previous and previous_inference is not None:
             if lastlot is None:
@@ -229,10 +214,6 @@ class SentimentSTLDA:
         Parameters
         ----------
         lot : Número de lote completado..
-
-        Returns
-        -------
-        None.
         '''
 
         results_data = {
@@ -254,7 +235,7 @@ if __name__ == "__main__":
     rate = pd.read_csv(" .csv")["review_nueva.rate"].values
     user = pd.read_csv(" .csv")["user2"].values
 
-    #Inicialización de los parámetros
+    #Iniciar de los parámetros
     nT, niter, nburn, nthin, nlot = 10, 150, 10, 1, 50
     alpha, eta, seed = 1, 1, 123
     nupdate = max(1, math.floor(niter / 10))
