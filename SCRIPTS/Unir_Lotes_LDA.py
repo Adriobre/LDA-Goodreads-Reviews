@@ -15,10 +15,6 @@ def load_json(filename):
     Parameters
     ----------
     filename : Archivo.
-
-    Returns
-    -------
-    dict
     '''
 
     try:
@@ -37,10 +33,6 @@ def merge_results(first_part, second_part):
     ----------
     first_part : Archivo con los primeros lotes.
     second_part : Archivo con los últimos lotes.
-
-    Returns
-    -------
-    merged_results : Archivo fusionado.
     '''
 
     merged_results = {}
