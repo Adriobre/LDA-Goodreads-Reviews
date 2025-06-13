@@ -50,7 +50,7 @@ class sentiment_stLDA:
         
         
             
-    #Inicializa parametros        
+    #Inicializar parametros        
     def init_collapse_gibbs_sampler(self):
 
         np.random.seed(self.seed)
@@ -142,14 +142,14 @@ class sentiment_stLDA:
 
 ############################################################################################
 ############################################################################################
-# Guardamos resultados
+# Guardar resultados
 if __name__ == "__main__":
     # Cargar los archivos CSV
     matrix_words = pd.read_csv(" .csv").values
     rate = pd.read_csv(" .csv")['x'].values
     user = pd.read_csv(".csv")['user2'].values
 
-    # Definir los parámetros
+    # Definir los parámetros (Cambiar los parámetros a los deseados)
     nT = 4
     niter = 3000
     alpha = 0.001
