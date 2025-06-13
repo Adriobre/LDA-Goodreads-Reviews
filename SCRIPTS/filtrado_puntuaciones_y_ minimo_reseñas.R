@@ -6,7 +6,7 @@
 library(dplyr)
 
 
-# Obtención del dataframe
+# Obtener el dataframe
 review_nueva <- read.csv(file.choose())
 
 data <-  review_nueva
