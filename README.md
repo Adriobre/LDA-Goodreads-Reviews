@@ -59,7 +59,7 @@ Para facilitar el análisis, se incluyen subconjuntos filtrados del dataset orig
 - `Filtrado.R`:  
   Elimina palabras extremadamente frecuentes o raras del vocabulario.
 
-- `filtrado_puntuaciones_y_minimo_reseñas.R`:  
+- `Filtrado_puntuaciones_y_minimo_reseñas.R`:  
   Filtra usuarios que no han usado todas las puntuaciones o que tienen muy pocas reseñas.
 
 ### 3. **Preparación para el modelo LDA**
